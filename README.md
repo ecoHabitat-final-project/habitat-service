@@ -43,7 +43,7 @@ com.ecohabitat.habitat_service
 
 ---
 
-## 🛡️ Gestión de Errores
+##  Gestión de Errores
 
 Este servicio utiliza un `@RestControllerAdvice` centralizado para gestionar errores de forma uniforme.
 
@@ -54,7 +54,7 @@ Ejemplos:
 
 ---
 
-## 🔍 Documentación Swagger
+## Documentación Swagger
 
 La API está documentada automáticamente con **Swagger/OpenAPI**.
 
@@ -72,8 +72,8 @@ spring.application.name=habitat-service
 server.port=8083
 
 spring.datasource.url=jdbc:mysql://localhost:3306/habitat_service
-spring.datasource.username=root
-spring.datasource.password=admin
+spring.datasource.username=*****
+spring.datasource.password=*****
 
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
@@ -102,6 +102,8 @@ eureka.client.service-url.defaultZone=http://localhost:8081/eureka/
 - [x] Gestión de excepciones
 - [x] Documentación Swagger
 - [x] Integración con Eureka
+- [ ] Integración con Feign (desarrollo)
+- [ ] Integración con Gateway (desarrollo)
 - [ ] Tests unitarios (en desarrollo)
 
 ---
