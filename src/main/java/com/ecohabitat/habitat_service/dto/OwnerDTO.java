@@ -9,5 +9,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class OwnerDTO {
-    private long ownerId;
+    private Long ownerId;
 }
