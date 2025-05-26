@@ -21,4 +21,7 @@ public class Habitat {
     private String location;
     private String type; //piso, chalet, mobileHome...
     Long ownerId;
+
+    public Habitat(String sevilla, long l, String s) {
+    }
 }
