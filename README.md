@@ -34,12 +34,13 @@ com.ecohabitat.habitat_service
 
 ## 🔗 Endpoints Principales
 
-| Método | Endpoint                         | Descripción                              |
-|--------|----------------------------------|------------------------------------------|
-| GET    | `/api/habitat`                   | Obtener todos los hábitats               |
-| GET    | `/api/habitat/{id}`              | Obtener un hábitat por ID                |
-| PATCH  | `/api/habitat/update/{id}`       | Actualizar el `ownerId` del hábitat      |
-| DELETE | `/api/habitat/delete/{id}`       | Eliminar un hábitat                      |
+| Método | Endpoint                        | Descripción                              |
+|--------|---------------------------------|------------------------------------------|
+| GET    | `/api/habitat`                  | Obtener todos los hábitats               |
+| GET    | `/api/habitat/{id}`             | Obtener un hábitat por ID                |
+| POST   | `/api/habitat`                  | Crear un nuevo habitat
+| PATCH  | `/api/habitat/update/{id}`      | Actualizar el `ownerId` del hábitat      |
+| DELETE | `/api/habitat/delete/{id}`      | Eliminar un hábitat                      |
 
 ---
 
