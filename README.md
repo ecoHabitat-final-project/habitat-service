@@ -46,7 +46,7 @@ com.ecohabitat.habitat_service
 
 ##  Gestión de Errores
 
-Este servicio utiliza un `@RestControllerAdvice` centralizado para gestionar errores de forma uniforme.
+Este servicio utiliza un `@ControllerAdvice` centralizado para gestionar errores de forma uniforme.
 
 Ejemplos:
 - `HabitatNotFoundException` → 404 Not Found
@@ -66,7 +66,7 @@ La API está documentada automáticamente con **Swagger/OpenAPI**.
 
 ---
 
-## ⚙️ Configuración `application.properties` (resumen)
+## Configuración `application.properties` (resumen)
 
 ```properties
 spring.application.name=habitat-service
@@ -103,9 +103,10 @@ eureka.client.service-url.defaultZone=http://localhost:8081/eureka/
 - [x] Gestión de excepciones
 - [x] Documentación Swagger
 - [x] Integración con Eureka
-- [ ] Integración con Feign (desarrollo)
-- [ ] Integración con Gateway (desarrollo)
-- [ ] Tests unitarios (en desarrollo)
+- [x] Integración con Feign (desarrollo)
+- [x] Integración con Gateway (desarrollo)
+- [x] Pruebas unitarias (en curso)
+- [ ] Pruebas mock (en curso)
 
 ---
 
