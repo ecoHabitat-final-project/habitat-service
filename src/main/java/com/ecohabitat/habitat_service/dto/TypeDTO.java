@@ -1,6 +1,5 @@
 package com.ecohabitat.habitat_service.dto;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,6 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class OwnerDTO {
-    private Long ownerId;
+public class TypeDTO {
+    private String type;
 }

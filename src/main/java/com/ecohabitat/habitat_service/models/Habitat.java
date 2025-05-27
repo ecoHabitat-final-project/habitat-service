@@ -20,6 +20,6 @@ public class Habitat {
 
     private String location;
     private String type; //piso, chalet, mobileHome...
-    Long ownerId;
+    //Long ownerId; //new Design
 
 }
