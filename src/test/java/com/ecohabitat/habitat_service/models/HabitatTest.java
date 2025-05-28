@@ -1,5 +1,7 @@
 package com.ecohabitat.habitat_service.models;
 
+import com.ecohabitat.habitat_service.exceptions.HabitatNotFoundException;
+import com.ecohabitat.habitat_service.exceptions.HabitatsNotFoundException;
 import com.ecohabitat.habitat_service.repositories.HabitatRespository;
 import com.ecohabitat.habitat_service.service.HabitatService;
 import jakarta.transaction.Transactional;
@@ -54,5 +56,17 @@ class HabitatTest {
         assertNotNull(habitats);
     }
 
+    @Test
+    @DisplayName ("Exception throws test")
+    void testHabitatNotFound() {
+
+        HabitatNotFoundException exc= assertThrows(
+                HabitatNotFoundException.class,
+                () -> habitatService.getHabitatById(999L),
+                "Expect Habitat id: 999 not found Message");
+        assertEquals(HabitatNotFoundException.class, exc.getClass());
+
+
+    }
 
 }
