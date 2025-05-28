@@ -16,14 +16,28 @@ Este microservicio forma parte del sistema distribuido **EcoHabitats**, una apli
 - **Swagger / OpenAPI (springdoc-openapi 2.3.0)**
 
 ---
+### Modelo de datos Habitat  
+
+
+El modelo `Habitat` representa un espacio para someterse a una mejora de su eficiencia
+energética (vivienda, piso, chalet...)
+
+| Atributo  | Tipo de dato | Descripción                            |
+|-----------|--------------|----------------------------------------|
+| `id`      | `long`       | Identificador único del hábitat        |
+| `location` | `string`     | Ubicación geográfica del hábitat       |
+| `type`    | `string`     | Tipo de vivienda (p. ej., piso, chalet) |
+
+> Se utiliza para registrar y consultar propiedades habitacionales asociadas a usuarios registrados en la plataforma.
+
 
 ## Estructura
 
 ```
 com.ecohabitat.habitat_service
 ├── controllers         # Controladores REST
-├── dto                 # Clases DTO de entrada/salida
-├── exceptions          # Excepciones personalizadas y handler global
+├── dto                 # Clases DTO para PATCH
+├── exceptions          # Excepciones personalizadas y manejador.
 ├── models              # Entidades JPA
 ├── repositories        # Interfaces JPA para acceso a datos
 ├── service             # Lógica de negocio
@@ -46,8 +60,8 @@ com.ecohabitat.habitat_service
 
 ##  Gestión de Errores
 
-Este servicio utiliza un `@ControllerAdvice` centralizado para gestionar errores de forma uniforme.
-
+Este servicio utiliza un `@ControllerAdvice` centralizado para gestion de errores.  
+#### Para que swagger sea accesible se ha de comentar este anotador.  
 Ejemplos:
 - `HabitatNotFoundException` → 404 Not Found
 - `HabitatsNotFoundException` → 404 Not Found
@@ -66,7 +80,7 @@ La API está documentada automáticamente con **Swagger/OpenAPI**.
 
 ---
 
-## Configuración `application.properties` (resumen)
+## Configuración `application.properties`
 
 ```properties
 spring.application.name=habitat-service
@@ -88,12 +102,8 @@ eureka.client.service-url.defaultZone=http://localhost:8081/eureka/
 
 1.  **MySQL** y **Eureka Server**  activos.
 2.  Ejecutar.
-3. Verifica que esté registrada en Eureka:
+3. Verifica que esté registrada en Eureka:  
    [http://localhost:8081/eureka](http://localhost:8081/eureka)
-
----
-
- 
 
 ---
 
@@ -103,13 +113,11 @@ eureka.client.service-url.defaultZone=http://localhost:8081/eureka/
 - [x] Gestión de excepciones
 - [x] Documentación Swagger
 - [x] Integración con Eureka
-- [x] Integración con Feign (desarrollo)
-- [x] Integración con Gateway (desarrollo)
+- [x] Integración con Feign
+- [x] Integración con Gateway
 - [x] Pruebas unitarias (en curso)
-- [ ] Pruebas mock (en curso)
+- [x] Pruebas mock (en curso)
 
 ---
-
-#
 
 Proyecto académico (IronHack BackEnd 2025)
