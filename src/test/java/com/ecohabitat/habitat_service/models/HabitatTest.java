@@ -2,7 +2,9 @@ package com.ecohabitat.habitat_service.models;
 
 import com.ecohabitat.habitat_service.repositories.HabitatRespository;
 import com.ecohabitat.habitat_service.service.HabitatService;
+import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,8 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
+@Transactional
+
 class HabitatTest {
     @Autowired
     private HabitatService habitatService;
@@ -20,18 +24,16 @@ class HabitatTest {
     @Autowired
     private HabitatRespository habitatRespository;
 
-    Habitat habitat;
+    Habitat testHabitat;
 
 
-//    @BeforeEach
-//    void setUp() {
-//        habitat = new Habitat();
-//        habitat.setOwnerId(1L);
-//        habitat.setLocation("Sevilla");
-//        habitat.setType("Chalet dos plantas");
-//
-//        habitatRespository.save(habitat);
-//    }
+    @BeforeEach
+    void setUp() {
+        testHabitat = new Habitat();
+        testHabitat.setLocation("Unknown");
+        testHabitat.setType("Chalet Testing");
+        habitatRespository.save(testHabitat);
+    }
 
 //    @AfterEach
 //    void tearDown() {
@@ -40,8 +42,9 @@ class HabitatTest {
     @Test
     @DisplayName("Test find habitat id")
     void testGetId() {
-        habitat = habitatService.getHabitatById(1L);
+       Habitat habitat = habitatService.getHabitatById(testHabitat.getId());
         assertNotNull(habitat);
+        assertEquals(testHabitat.getId(), habitat.getId());
     }
 
     @Test

@@ -1,5 +1,6 @@
 package com.ecohabitat.habitat_service.service;
 
+import com.ecohabitat.habitat_service.dto.TypeDTO;
 import com.ecohabitat.habitat_service.exceptions.HabitatNotFoundException;
 import com.ecohabitat.habitat_service.exceptions.HabitatsNotFoundException;
 import com.ecohabitat.habitat_service.models.Habitat;
@@ -31,14 +32,14 @@ public class HabitatService {
     }
 
 
-//    public Habitat getHabitatByOwnerId(long id){
-//
-//        return habitatRepository.findHabitatByOwnerId(id).
-//                orElseThrow(() -> new HabitatNotFoundException("Habitat id: " + id+ " not found"));
-//    }
-
     public Habitat createHabitat(Habitat habitat) {
         return habitatRepository.save(habitat);
+    }
+
+    public Habitat updateHabitat(long habitatId, TypeDTO typeDTO) {
+        Habitat updateHabitat = getHabitatById(habitatId);
+        updateHabitat.setType(typeDTO.getType());
+        return habitatRepository.save(updateHabitat);
     }
 
     public void deleteHabitat(long id) {

@@ -46,9 +46,9 @@ public class HabitatController {
     @PatchMapping("/update/{habitatId}")
     ResponseEntity<?> updateType(@PathVariable("habitatId") Long userId,
                                   @RequestBody TypeDTO typeDTO) {
-        Habitat updateHabitat = habitatService.getHabitatById(userId);
-        updateHabitat.setType(typeDTO.getType());
-        return new ResponseEntity<>(updateHabitat, HttpStatus.OK);
+
+        Habitat habitatUpdated =habitatService.updateHabitat(userId, typeDTO);
+        return new ResponseEntity<>(habitatUpdated, HttpStatus.OK);
     }
 
 }
