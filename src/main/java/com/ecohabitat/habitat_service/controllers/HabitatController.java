@@ -34,7 +34,7 @@ public class HabitatController {
     @PostMapping("")
     ResponseEntity<?> createHabitat(@RequestBody Habitat habitat) {
         habitatService.createHabitat(habitat);
-        return new ResponseEntity<>(habitat, HttpStatus.OK);
+        return new ResponseEntity<>(habitat, HttpStatus.CREATED);
     }
 
 
