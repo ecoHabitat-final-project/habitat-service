@@ -7,7 +7,7 @@ Este microservicio forma parte del sistema distribuido **EcoHabitats**, una apli
 ## Tecnologías Utilizadas
 
 - **Java 21**
-- **Spring Boot 3.4.6**
+- **Spring Boot**
 - **Spring Cloud 2024.0.1**
 - **Spring Data JPA**
 - **MySQL**
@@ -46,7 +46,7 @@ com.ecohabitat.habitat_service
 
 ---
 
-## 🔗 Endpoints Principales
+## Endpoints Principales
 
 | Método | Endpoint                        | Descripción                              |
 |--------|---------------------------------|------------------------------------------|
@@ -78,6 +78,9 @@ La API está documentada automáticamente con **Swagger/OpenAPI**.
   o  
   [`http://localhost:8083/swagger-ui/index.html`](http://localhost:8083/swagger-ui/index.html)
 
+#### Importante: 
+Comentar `@ControllerAdvice` de la clase GlobalExceptionHandeler
+para que Swagger genere la documentación
 ---
 
 ## Configuración `application.properties`
